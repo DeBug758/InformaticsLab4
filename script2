@@ -1,0 +1,10 @@
+import json
+import xmltodict
+
+with open('input.json', 'r') as f:
+    jsonString = f.read()
+
+xmlString = xmltodict.unparse(json.loads(jsonString), pretty=True)
+
+with open('output.xml', 'w') as f:
+    f.write(xmlString)

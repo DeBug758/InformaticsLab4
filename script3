@@ -1,3 +1,7 @@
+# вариант 25
+# JSON -> XML
+# день недели: пятница
+
 import re
 import time
 
@@ -9,7 +13,7 @@ def open_json(file_name):
 
 # функция записи в XML файл
 def write_xml(list):
-    f = open('Schedule_2.xml', 'w', encoding='UTF-8')
+    f = open('output.xml', 'w', encoding='UTF-8')
     f.write('\n'.join(list))
     f.close()
 
@@ -41,7 +45,7 @@ def find_text(index):
 
 additional_two_time = time.time()
 for _ in range(10):
-    start_json = open_json('Schedule.json')
+    start_json = open_json('input.json')
     start_json = js_cutter(start_json)
 
     res_xml = list()  # список, который будет содержать строки нашего результирующего файла
